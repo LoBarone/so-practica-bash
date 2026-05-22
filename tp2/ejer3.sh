@@ -1,12 +1,12 @@
 #!/bin/bash
 if [ ! -f uno ]; then
 	echo "uno no es archivo"
-	exit
+	exit 1
 fi
 
 if [ ! -f dos ]; then
 	echo "dos no es un archivo"
-	exit
+	exit 1
 fi
 
 lineArch1=$(wc -l uno )
@@ -17,4 +17,3 @@ if [ $lineArch1 -gt $lineArch2 ]; then
 elif [ $lineArch1 -lt $lineArch2 ]; then
 	echo "dos tiene mas lineas que uno"
 fi
-

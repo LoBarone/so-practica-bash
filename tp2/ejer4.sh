@@ -3,17 +3,17 @@
 
 if [ $# -ne 2 ]; then
 	echo "Debes pasar dos parametros como argumentos"
-	exit       
+	exit 1      
 fi
 
 if [ ! -f $1 ]; then
 	echo "1 no es un archivo"
-	exit
+	exit 1
 fi
 
 if [ ! -f $2 ]; then
 	echo "2 no es un archivo"
-	exit
+	exit 1
 fi
 
 lineas1=$(cat $1 | wc -l)

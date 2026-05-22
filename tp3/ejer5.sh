@@ -3,15 +3,18 @@
 
 if [ $# -ne 2 ]; then
 	echo "Debes pasar 2 parametros"
-	exit
+	exit 1
 fi
 
 if [ ! -d $1 ]; then
 	echo "El primer parametro debe ser un directorio"
-	exit
+	exit 1
 fi
 
-#Falta chequeo si es un int
+if [ -e $2 ] || [[ ! $2 =~ ^[0-9]+$ ]]; then
+	echo "El segundo parametro debe ser un entero"
+	exit 1
+fi
 
 for i in "$1"/*; do
 	if [ ! -f $i ]; then
@@ -24,3 +27,5 @@ for i in "$1"/*; do
 		basename $i >> coincidencias
 	fi
 done
+
+
