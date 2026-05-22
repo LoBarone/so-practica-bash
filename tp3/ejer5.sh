@@ -11,7 +11,7 @@ if [ ! -d $1 ]; then
 	exit 1
 fi
 
-if [ -e $2 ] || [[ ! $2 =~ ^[0-9]+$ ]]; then
+if [[ ! $2 =~ ^[0-9]+$ ]]; then
 	echo "El segundo parametro debe ser un entero"
 	exit 1
 fi
