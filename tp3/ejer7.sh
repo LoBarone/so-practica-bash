@@ -21,3 +21,6 @@ echo "La multiplicacion es: $mul"
 
 div=$(( $1 / $2 ))
 echo "La division es: $div"
+
+resto=$(( $1 % $2 ))
+echo "El resto es: $resto"
